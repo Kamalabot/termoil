@@ -1,17 +1,14 @@
-mod api;
-mod cli;
-mod command;
-mod os;
-use api::{get_response, ApiResponse};
+// starting imports
 use clap::Parser;
-use cli::{Args, Commands};
-use command::Instructions;
 use dotenv::dotenv;
+use termoil::api::{get_response, ApiResponse};
+use termoil::cli::{Args, Commands};
+use termoil::command::Instructions;
 
-use os::get_system_message;
 use std::{error::Error, fs::OpenOptions, io::Write};
+use termoil::os::get_system_message;
 
-use crate::{
+use termoil::{
     command::handle_external_commands,
     os::{get_default_tokens, get_os},
 };

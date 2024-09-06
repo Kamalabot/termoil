@@ -34,14 +34,14 @@ pub async fn get_response(query: String, tokens: u32) -> Result<ApiResponse, Box
         .await?
         .json()
         .await?;
-
+    // println!("interim response: {:?}", response);
     Ok(response)
 }
 
 pub fn get_body(query: String, tokens: u32) -> serde_json::Value {
     json!(
         {
-            "model":"gpt-3.5-turbo",
+            "model":"gpt-4o",
             "messages":[
                 // {"role": "system",
                 // "content": get_system_message()
